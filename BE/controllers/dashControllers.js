@@ -1,6 +1,6 @@
 class DashController {
     index(req,res){
-        res.render('dashboard')
+        res.render('Dashboard')
     }
 }
 module.exports = new DashController()

@@ -1,7 +1,8 @@
 
 //su dung router
-const HomeRouter = require('./routers/HomeRouter')
-const DashRouter = require('./routers/DashRouter')
+const HomeRouter = require('./routers/HomeRouter');
+const DashRouter = require('./routers/DashRouter');
+const UserRouter = require('./routers/UserRouter');
 
 //su dung handlebar
 const handlebar = require('express-handlebars')
@@ -11,27 +12,27 @@ const path = require('path')
 // dieu huong page
 function routers(app) {
     uses(app)
-    handlebars(app)   
+    sethandlebars(app)
 }
 
 //su dung router 
 function uses(app) {
+    app.use('/users', UserRouter)
     app.use('/dashboard', DashRouter)
     app.use('/', HomeRouter)
 }
 
 //su dung view page
-function handlebars (app){
+function sethandlebars(app) {
     app.engine("hbs", handlebar.engine({
         defaultLayout: "main",
         extname: ".hbs",
         helpers: {
             sum: (a, b) => a + b,
-          }
-      }));
+        }
+    }));
     app.set('view engine', "hbs")
-    app.set('views', path.join(__dirname, "views"))
-    console.log(__dirname)
+    app.set('views', path.join(__dirname, 'views'))
 }
 
 module.exports = routers

@@ -1,0 +1,170 @@
+<div class="nav accordion flex-wrap d-flex  position-fixed fixed-top bg-dark" style="right: 0; width: 20%; " id=" accordionSidenav">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center w-100 text-decoration-none mt-5" href="index.html">
+        <div class="m-3 d-flex w-100 align-items-center w-100 justify-content-left">
+            <div style="width:50px; height:50px" class="d-flex align-items-center justify-content-center ">
+                <img src="https://ik.imagekit.io/alejk5lwty/4a.png?updatedAt=1691287357573" alt="err" class="w-100 h-100" />
+            </div>
+            <div class=" mx-3 d-flex align-items-center ">Name Admin <sup>0</sup></div>
+        </div>
+    </a>
+    <!-- Sidenav Heading (Home)-->
+    <div class="nav-link sidenav-menu-heading w-100 bg-secondary text-white ">
+        <span>
+            Admin
+        </span>
+    </div>
+    <div class="w-100 d-flex flex-wrap">
+        <a class="nav-link collapsed d-flex justify-content-between w-100" asp-action="Index" asp-area="Admin" asp-controller="Home" aria-expanded="false">
+            <div class="nav-link-icon">
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                    <path fill="currentColor" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"></path>
+                </svg>
+                Home
+            </div>
+
+        </a>
+
+    </div>
+    <!-- Sidenav Menu Heading (Core)-->
+    <div class="nav-link  sidenav-menu-heading w-100 text-white bg-secondary ">
+        <span>
+            Core
+        </span>
+    </div>
+    <!-- Sidenav Accordion (Dashboard)-->
+    <div class="w-100 d-flex flex-wrap">
+        <a class="nav-link collapsed d-flex justify-content-between w-100" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+            <div class="nav-link-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="red" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                Dashboards
+            </div>
+            <div class="sidenav-collapse-arrow">
+                <svg class="svg-inline--fa fa-angle-down" width="20" height="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+                    <path fill="currentColor" d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                </svg>
+                <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+            </div>
+        </a>
+        <div class="collapse w-100 bg-light" id="collapseDashboards" data-bs-parent="#accordionSidenav">
+            <nav class="sidenav-menu-nested nav accordion w-100 d-flex flex-wrap" id="accordionSidenavPages">
+                <a class="nav-link w-100" href="#">Default</a>
+
+            </nav>
+        </div>
+    </div>
+
+    <!-- Sidenav Heading (Custom)-->
+    <div class="nav-link sidenav-menu-heading w-100 bg-secondary text-white ">
+        <span>
+            Custom
+        </span>
+    </div>
+    <!-- Sidenav Accordion (Pages)-->
+    <div class="w-100 d-flex flex-wrap">
+        <a class="nav-link collapsed d-flex w-100 justify-content-between " href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+            <div class="nav-link-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+
+                Pages
+            </div>
+            <div class="sidenav-collapse-arrow">
+                <svg class="svg-inline--fa fa-angle-down" width="20" height="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+                    <path fill="currentColor" d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                </svg>
+                <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+            </div>
+        </a>
+        <div class="collapse w-100 bg-light" id="collapsePages" data-bs-parent="#accordionSidenav">
+            <nav class="sidenav-menu-nested nav accordion w-100" id="accordionSidenavPagesMenu">
+                <div class="w-100 d-flex flex-wrap  justify-content-between">
+
+                    <!-- Nested Sidenav Accordion (Pages -> Authentication)-->
+                    <a class="nav-link collapsed  w-100" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                        <div class="sidenav-collapse-arrow  d-flex w-100 justify-content-between">
+                            Authentication
+                            <svg class="svg-inline--fa fa-angle-down" width=" 20" height="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+                                <path fill="currentColor" d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                            </svg>
+                            <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+
+                        </div>
+                    </a>
+                    <div class="collapse w-100" id="pagesCollapseAuth" data-bs-parent="#accordionSidenavPagesMenu">
+                        <nav class="sidenav-menu-nested nav accordion w-100" id="accordionSidenavPagesAuth">
+                            <div class="w-100 d-flex  flex-wrap">
+
+                                <!-- Nested Sidenav Accordion (Pages -> Authentication -> Basic)-->
+                                <a class="nav-link collapsed d-flex w-100 justify-content-between" href="#" data-bs-toggle="collapse" width=" 20" height="20" data-bs-target="#pagesCollapseAuthBasic" aria-expanded="false" aria-controls="pagesCollapseAuthBasic">
+                                    Basic
+                                    <div class="sidenav-collapse-arrow">
+                                        <svg class="svg-inline--fa fa-angle-down" width=" 20" height="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+                                            <path fill="currentColor" d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                                        </svg>
+                                        <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+                                    </div>
+                                </a>
+                                <div class="collapse w-100" id="pagesCollapseAuthBasic" data-bs-parent="#accordionSidenavPagesAuth">
+                                    <nav class="sidenav-menu-nested nav w-100 d-flex flex-wrap">
+                                        <a class="nav-link w-100 " href="#">Login</a>
+                                        <a class="nav-link w-100" href="#">Register</a>
+                                        <a class="nav-link w-100" href="#">Forgot Password</a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Sidenav Accordion (Applications)-->
+    <div class="w-100 d-flex flex-wrap">
+
+        <a class="nav-link collapsed d-flex w-100 justify-content-between" href="#" data-bs-toggle="collapse" data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseApps">
+            <div class="nav-link-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+
+                Users Management
+            </div>
+            <div class="sidenav-collapse-arrow">
+                <svg class="svg-inline--fa fa-angle-down" width=" 20" height="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+                    <path fill="currentColor" d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                </svg>
+                <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+            </div>
+        </a>
+        <div class="collapse w-100 bg-light" id="collapseApps" data-bs-parent="#accordionSidenav">
+            <nav class="sidenav-menu-nested nav accordion w-100" id="accordionSidenavAppsMenu">
+                <!-- Nested Sidenav Accordion (Apps -> Knowledge Base)-->
+                <a class="nav-link collapsed d-flex w-100 justify-content-between" href="#" data-bs-toggle="collapse" data-bs-target="#appsCollapseKnowledgeBase" aria-expanded="false" aria-controls="appsCollapseKnowledgeBase">
+                    Accounts Management
+                    <div class="sidenav-collapse-arrow">
+                        <svg class="svg-inline--fa fa-angle-down" width=" 20" height="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+                            <path fill="currentColor" d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                        </svg>
+                        <!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com -->
+                    </div>
+                </a>
+                <div class="collapse w-100" id="appsCollapseKnowledgeBase">
+                    <a class="nav-link w-100" href="/users">Accounts</a>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+
+
+
+</div>
