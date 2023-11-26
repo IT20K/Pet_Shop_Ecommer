@@ -1,0 +1,71 @@
+<div class="d-flex">
+    <div class="w-25">
+        {{>Header}}
+    </div>
+    <div class="w-75 p-3 bg-light">
+        <div class="order-details  w-100">
+            <h1>Form Add Product</h1>
+            <div class="w-100">
+                <form class="w-100" action="/products/v1/api/create" method="post">
+                    <div class=" d-flex flex-wrap w-100">
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">Productname:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="productname"
+                                placeholder="Please enter your productname" type="text" />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Currency:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="currency"
+                                placeholder="Please enter your currency" type="text" />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">Weight:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="weight"
+                                placeholder="Please enter your weight" type="text" />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">quality:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="quality"
+                                placeholder="Please enter your quality" type="number" />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">Brand:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="brand"
+                                placeholder="Please enter your brand" type="text" />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Category:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="category"
+                                placeholder="Please enter your category" type="text" />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">Sold:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="sold"
+                                placeholder="Please enter your sold" type="text" />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Producter:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="producter"
+                                placeholder="Please enter your producter" type="text" />
+                        </div>
+                         <div class="form-group w-50 p-2">
+                            <span class="field-label">Organised:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="organised"
+                                placeholder="Please enter your organised" type="text" />
+                        </div>
+                         <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">?</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="?"
+                                placeholder="Please enter your ?" type="text" />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <input type="submit" class="btn btn-primary " value="Add" />
+                            <a href="/users" class="btn btn-primary">Back</a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

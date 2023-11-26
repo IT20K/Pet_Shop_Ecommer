@@ -13,10 +13,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-    role: {
-        type: String,
-        default: ""
-    },
     password: {
         type: String,
         default: ""
@@ -37,14 +33,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-    role: {
-        type: String,
-        default: "user",
-        required: true
-    },
     date_create: {
-        type: Date.now()
+        type: Date
     },
+    roles: { type: mongoose.Schema.Types.ObjectId, ref: "Roles" },
     carts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Carts" }],
     invoices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Invoices" }]
 });

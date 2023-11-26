@@ -1,5 +1,5 @@
 class DashController {
-    index(req,res){
+    Index(req,res){
         res.render('Dashboard')
     }
 }

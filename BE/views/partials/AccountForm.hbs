@@ -1,0 +1,75 @@
+<div class="d-flex">
+    <div class="w-25">
+        {{>Header}}
+    </div>
+    <div class="w-75 p-3 bg-light">
+        <div class="order-details  w-100">
+            <h1>Form Add User</h1>
+            <div class="w-100">
+                <form class="w-100" action="/users/v1/api/create" method="post">
+                    <div class=" d-flex flex-wrap w-100">
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">UserName:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="username"
+                                placeholder="Please enter your username" type="text" />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Email:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="email"
+                                placeholder="Please enter your email" type="email" />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">Phone:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="phone"
+                                placeholder="Please enter your phone" type="text" />
+                        </div>
+
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Address:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="address"
+                                placeholder="Please enter your address" type="text" />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">FullName:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="fullname"
+                                placeholder="Please enter your fullname" type="text" />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Birthday:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="birthday"
+                                placeholder="Please enter your birthday" type="date" />
+                        </div>
+
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">Password:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="password"
+                                placeholder="Please enter your password" type="password" />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">Avatar:</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="avatar"
+                                placeholder="Please enter your avatar" type="file" accept="Images/*" />
+                        </div>
+
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Role:</span>
+                            <select class="field-value mt-3 mb-3 form-control" name="roles"
+                                placeholder="Please enter your role" type="text">
+                                <option value="">-- Chọn Role --</option>
+                                {{#each roleModel}}
+                                <option value="{{this._id}}">{{this.permissionLevel}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="form-group w-50 p-2">
+                            <input type="submit" class="btn btn-primary " value="Add" />
+                            <a href="/users" class="btn btn-primary">Back</a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

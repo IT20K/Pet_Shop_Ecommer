@@ -1,0 +1,43 @@
+<div class="d-flex">
+    <div class="w-25">
+        {{>Header}}
+    </div>
+    <div class="w-75 p-3 bg-light">
+        <div class="order-details  w-100">
+            <h1>Form Add Role</h1>
+            <form method="post" action="/roles/v1/api/create">
+                <div class="w-100">
+                    <div class=" d-flex flex-wrap w-100">
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">RoleName: </span>
+                            <input class="field-value mt-3 mb-3 form-control" name="rolename" id="rolename"
+                                placeholder="Please enter your rolename" type="text" />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Roledescription: </span>
+                            <input class="field-value mt-3 mb-3 form-control" name="roledescription" id="roledescription"
+                                placeholder="Please enter your roledescription" type="text"
+                                />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">PermissionLevel: </span>
+                            <input class="field-value mt-3 mb-3 form-control" name="permissionLevel" id="permissionLevel"
+                                placeholder="Please enter your permissionLevel" type="number"
+                                />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">? </span>
+                            <input class="field-value mt-3 mb-3 form-control" name="?" id="?"
+                                placeholder="Please enter your ?" type="text"
+                                />
+                        </div>
+                        <div class="form-group w-50 p-2">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                            <a href="/roles" class="btn btn-primary">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

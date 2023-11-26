@@ -7,11 +7,12 @@
             <div class="card-header bg-dark text-white px-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="me-4">
-                        <h2 class="card-title text-white mb-0">Users Management</h2>
+                        <h2 class="card-title text-white mb-0">Roles Management</h2>
                         <div class="card-subtitle">Details and history</div>
                     </div>
                     <div class="d-flex gap-2">
-                        <a class="btn btn-lg btn-secondary" asp-action="Create" asp-area="Admin" asp-controller="Users">Create New User</a>
+                        <a class="btn btn-lg btn-secondary" asp-action="Create" asp-area="Admin" asp-controller="Users"
+                            href="/roles/v1/api/get">Create New Role</a>
                     </div>
                 </div>
             </div>
@@ -19,7 +20,7 @@
                 <!-- Simple DataTables example-->
                 <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
                     <div class="datatable-top">
-                        <div class="datatable-dropdown">
+                        {{!-- <div class="datatable-dropdown">
                             <label for="datatable-selector">
                                 <select id="datatable-selector" class="form-select form-select-sm mb-2">
                                     <option value="5">5</option>
@@ -30,44 +31,45 @@
                                 </select>
                                 Entries per page
                             </label>
-                        </div>
+                        </div> --}}
                         <div class="datatable-search mt-2">
-                            <input class="form-control form-control-sm" id="datatable-input" placeholder="Search something ...." type="search" title="Search within table" aria-controls="datatablesSimple">
+                            <input class="form-control form-control-sm" id="datatable-input"
+                                placeholder="Search something ...." type="search" title="Search within table"
+                                aria-controls="datatablesSimple">
                         </div>
                     </div>
                     <div class="datatable-container">
-                      
                         <table id="datatablesSimple" class="table">
                             <thead>
                                 <tr>
-                                    <th><a href="#" class="datatable-sorter text-decoration-none">Username</a></th>
-                                    <th><a href="#" class="datatable-sorter text-decoration-none">Email</a></th>
-                                    <th><a href="#" class="datatable-sorter text-decoration-none">Address</a></th>
-                                    <th><a href="#" class="datatable-sorter text-decoration-none">Phone</a></th>
+                                    <th><a href="#" class="datatable-sorter text-decoration-none">Stt</a></th>
+                                    <th><a href="#" class="datatable-sorter text-decoration-none">Rolename</a></th>
+                                    <th><a href="#" class="datatable-sorter text-decoration-none">Roledescription</a></th>
                                     <th><a href="#" class="datatable-sorter text-decoration-none">Behaviour</a></th>
                                 </tr>
                             </thead>
                             <tbody>
-                               
-
-                                    <tr data-index="0">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>@account.Phone</td>
-                                        <td class="d-flex">
-                                          <button class="btn btn-primary">Details</button>
-                                        </td>
-                                    </tr>
+                                {{#each role}}
+                                <tr key="{{this._id}}">
+                                    <td>{{sum @index 1}}</td>
+                                    <td>{{this.rolename}}</td>
+                                    <td>{{this.roledescription}}</td>
+                                    <td class="d-flex">
+                                        <button class="btn btn-primary">Details</button>
+                                    </td>
+                                </tr>
+                                {{/each}}
                             </tbody>
                         </table>
                     </div>
-                    <div class="datatable-bottom">
+                    {{!-- <div class="datatable-bottom">
                         <div class="datatable-info mt-2 mb-2">Showing 1 to 10 of 100 entries</div>
                         <nav class="datatable-pagination">
                             <ul class="pagination">
-                                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">‹</a></li>
-                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"
+                                        aria-disabled="true">‹</a></li>
+                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
+                                </li>
                                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                                 <li class="page-item"><a class="page-link" href="#">4</a></li>
@@ -79,7 +81,7 @@
                                 <li class="page-item"><a class="page-link" href="#">›</a></li>
                             </ul>
                         </nav>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

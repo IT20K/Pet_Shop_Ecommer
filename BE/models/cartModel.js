@@ -1,60 +1,15 @@
 const mongoose = require("mongoose");
-const ImageSchema = new mongoose.Schema({
-    ImageDisplay: {
-        type:String,
-        default:""
+
+const CartSchema = mongoose.Schema({
+    quantity:{
+        type:Number
     },
-    ImageDisplaySub: {
-        type:String,
-        default:""
+    price:{
+        type:Number
     },
-    ImageDisplaySubSub: {
-        type:String,
-        default:""
-    },
-    ImageDisplaySubSubSub: {
-        type:String,
-        default:""
-    }
-})
-const CartModel = mongoose.Schema({
-    productname:{
-        type:String,
-        default:""
-    },
-    currency:{
-        type:Number,
-        default:""
-    },
-    weight:{
-        type:Number,
-        default:""
-    },
-    quality:{
-        type:Number,
-        default:""
-    },
-    brand:{
-        type:String,
-        default:""
-    },
-    category:{
-        type:String,
-        default:""
-    },
-    sold: {
-        type: Number,
-        default: "",
-    },
-    producter: {
-        type: String
-    },
-    organised: {
-        type: String
-    },
-    imageObject:ImageSchema,
-    users: {type: mongoose.Schema.Types.ObjectId, ref:"Users"}
+    products: { type: mongoose.Schema.Types.ObjectId, ref: "Products" },
+    users: { type: mongoose.Schema.Types.ObjectId, ref: "Users" }
 });
 
-const Cart = mongoose.model("Carts", CartModel);
+const Cart = mongoose.model("Carts", CartSchema);
 module.exports = Cart;

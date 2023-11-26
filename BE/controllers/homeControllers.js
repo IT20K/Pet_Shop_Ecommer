@@ -1,7 +1,7 @@
 class HomeControllers {
-    index(req, res) {
+    Index(req, res) {
         res.render('Home')
     }
-   
+
 }
 module.exports = new HomeControllers()

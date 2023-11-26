@@ -1,2 +1,3 @@
 npm i
+npm i node
 npm i axios bcrypt body-parser concurrently cors dotenv express express-handlebars mongoose
