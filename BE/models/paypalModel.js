@@ -1,17 +1,20 @@
 const mongoose = require('mongoose')
 const PaypalSchema = mongoose.Schema({
-    Mode :{
+    mode :{
         type:String
     },
-    ClientId:{
+    clientid:{
         type:String
     },
-    ClientSecret:{
+    clientsecret:{
         type:String
     },
-    BaseUrl:{
+    baseurl:{
         type:String
-    }
+    },
+    users:{type:mongoose.Schema.Types.ObjectId,ref:"Users"},
+    invoices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Invoices" }]
+
 })
-const Paypal = mongoose.model('Paypal', PaypalSchema)
+const Paypal = mongoose.model('Payments', PaypalSchema)
 module.exports = Paypal

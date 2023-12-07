@@ -12,7 +12,7 @@ const UserRouter = require('./routers/UserRouter');
 const RoleRouter = require('./routers/RoleRouter');
 const ProductRouter = require('./routers/ProductRouter');
 const CartRouter = require('./routers/CartRouter');
-
+const PaymentRouter = require('./routers/PaymentRouter')
 
 //khai bao side can thiet
 // dieu huong page
@@ -38,6 +38,7 @@ function uses(app) {
     app.use(cors({ origin: "*" }));
 
     
+    app.use("/payments", PaymentRouter)
     app.use("/carts", CartRouter)
     app.use("/products", ProductRouter)
     app.use("/roles", RoleRouter)

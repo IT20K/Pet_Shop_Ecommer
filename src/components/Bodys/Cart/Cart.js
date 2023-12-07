@@ -60,6 +60,7 @@ export default function Cart() {
     
     // giảm số lượng
     const Decrease = async (e) => {
+        
         const button = e.target;
         const parent = button.parentElement;
         const id = button.getAttribute("data-id");
@@ -221,7 +222,7 @@ export default function Cart() {
                                                         <button type="button" className="btn btn-info btn-block btn-lg">
                                                             <div className="d-flex justify-content-between">
                                                                 <span>{sum}</span>
-                                                                <span> Checkout <i className="fas fa-long-arrow-alt-right ms-2"></i></span>
+                                                                <Link to={'/payment'}> Checkout <i className="fas fa-long-arrow-alt-right ms-2"></i></Link>
                                                             </div>
                                                         </button>
                                                     </div>

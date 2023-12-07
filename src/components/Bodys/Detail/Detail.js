@@ -75,7 +75,8 @@ export default function Detail() {
                         </div>
                         <div className="order_info d-flex flex-row">
                             <form action="#">
-                            </form></div>
+                            </form>
+                            </div>
                         <div className="row">
                             <div className="col-xs-6 mt-2 mb-2" >
                                 <div className="product_quantity"> <span>QTY: </span>

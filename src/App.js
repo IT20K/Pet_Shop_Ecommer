@@ -7,6 +7,7 @@ import DetailPages from './components/DetailPages/Main/DetailPages';
 import LoginPages from './components/Authencations/Main/LoginPages'
 import RegisterPages from './components/Authencations/Main/RegisterPage'
 import ProfilePages from './components/ProfilePages/Main/ProfilePages';
+import PaymentPages from './components/PayMentPages/Main/PayMentPages';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
             <Route path='/login' element={<LoginPages/>}></Route>
             <Route path='/register' element={<RegisterPages/>}></Route>
             <Route path='/profile' element={<ProfilePages/>}></Route>
+            <Route path='/payment' element={<PaymentPages/>}></Route>
           </Routes>
         </Router>
       </header>

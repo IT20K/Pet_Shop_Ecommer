@@ -38,7 +38,8 @@ const UserSchema = new mongoose.Schema({
     },
     roles: { type: mongoose.Schema.Types.ObjectId, ref: "Roles" },
     carts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Carts" }],
-    invoices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Invoices" }]
+    invoices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Invoices" }],
+    payments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Payments" }]
 });
 
 

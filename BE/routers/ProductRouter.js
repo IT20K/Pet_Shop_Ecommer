@@ -2,6 +2,8 @@ const expess = require('express')
 const router = expess.Router()
 const ProductControllers = require('../controllers/productControllers')
 
+
+
 router.get('/v1/api/detail/:id/get', ProductControllers.DetailProductData)
 router.post('/v1/api/update/:id', ProductControllers.UpdateProduct)
 router.get('/v1/api/update/:id/get', ProductControllers.UpdateForm)
