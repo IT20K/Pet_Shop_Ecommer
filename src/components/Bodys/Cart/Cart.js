@@ -5,6 +5,7 @@ import AxiosIDCart from './AxiosIDCart/AxiosIDCart'
 import AxiosOnDeleteAll from './AxiosOnDeleteAll/AxiosOnDeleteAll'
 import AxiosUpdateQuantity from './AxiosUpdateQuantity/AxiosUpdateQuantity'
 import { Link } from 'react-router-dom'
+import { PayPalScriptProvider , PayPalButtons} from '@paypal/react-paypal-js'
 export default function Cart() {
     // cart sản phẩm
     const [carts, setCart] = useState([])
@@ -73,26 +74,26 @@ export default function Cart() {
         parent.querySelector(".inputValue").value = value;
         AxiosUpdateQuantity(value, id)
     }
-    window.onload = ()=>{
-        Paypal.Buttons({
-            createOrder: function (data, actions) {
-                return actions.order.create({
-                    purchase_units: [
-                        {
-                            amount: {
-                                value: '0.01'
-                            }
-                        }
-                    ]
-                });
-            },
-            onApprove: function (data, actions) {
-                return actions.order.capture().then(function (details) {
-                    alert('Transaction completed by ' + details.payer.name.given_name);
-                });
-            }
-        }).render('#paypal');
-    }
+    // window.onload = ()=>{
+    //     Paypal.Buttons({
+    //         createOrder: function (data, actions) {
+    //             return actions.order.create({
+    //                 purchase_units: [
+    //                     {
+    //                         amount: {
+    //                             value: '0.01'
+    //                         }
+    //                     }
+    //                 ]
+    //             });
+    //         },
+    //         onApprove: function (data, actions) {
+    //             return actions.order.capture().then(function (details) {
+    //                 alert('Transaction completed by ' + details.payer.name.given_name);
+    //             });
+    //         }
+    //     }).render('#paypal');
+    // }
     return (
         <>
             <section className="h-100 h-custom">
@@ -244,7 +245,7 @@ export default function Cart() {
                                                                 <Link to={'/payment'}> Checkout <i className="fas fa-long-arrow-alt-right ms-2"></i></Link>
                                                             </div>
                                                         </button> */}
-                                                        {/* <div className='row  mt-2'>
+                                                        <div className='row  mt-2'>
                                                             <div className='w-100 d-flex justify-content-center algin-content-center'>
                                                                 <PayPalScriptProvider options={{ 'AY94rKESY3SLKA_aQjLxufEfI47FhGqFrjig4dXWTzNZgLQSRSN-xWCEaUA9scm4nJZ_62FPRNWgIZI-': 'test', currency: 'USD' }}>
                                                                     <div id="paypal">
@@ -252,8 +253,8 @@ export default function Cart() {
                                                                     </div>
                                                                 </PayPalScriptProvider>
                                                             </div>
-                                                        </div> */}
-                                                        <div id='paypal'></div>
+                                                        </div>
+                                                        {/* <div id='paypal'></div> */}
                                                     </div>
 
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import CheckUserExist from "../CheckUserExists/CheckUserExist"
 export default function Header() {
     const [user, setUser] = useState({})
+    const [ID, getID] = useState('')
     useEffect(() => {
         const Onload = async () => {
             try {
@@ -17,6 +18,10 @@ export default function Header() {
 
         }
         Onload()
+
+        const UserID = localStorage.getItem('UserID')
+        const ID = JSON.parse(UserID)
+        getID(ID)
     }, [])
     // đăng xuất
     const OnClick = () => {
@@ -25,22 +30,24 @@ export default function Header() {
 
     return (
         <>
+
+
             <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary" id="navigationbar" >
                 <div className="container">
                     <a className="navbar-brand me-2" href="/">
                         <div className="d-flex">
-                                <h1 className="text-primary">A</h1>
-                                <h1 className="text-secondary">N</h1>
-                                <h1 className="text-success">D</h1>
-                                <h1 className="text-warning">R</h1>
-                                <h1 className="text-info">E</h1>
-                                <h1 className="text-secondary">W</h1>
-                                <h1 className="text-muted">-</h1>
-                                <h1 className="text-danger">S</h1>
-                                <h1 className="text-warning">T</h1>
-                                <h1 className="text-success">O</h1>
-                                <h1 className="text-primary">R</h1>
-                                <h1 className="text-secondary">E</h1>
+                            <h1 className="text-primary">A</h1>
+                            <h1 className="text-secondary">N</h1>
+                            <h1 className="text-success">D</h1>
+                            <h1 className="text-warning">R</h1>
+                            <h1 className="text-info">E</h1>
+                            <h1 className="text-secondary">W</h1>
+                            <h1 className="text-muted">-</h1>
+                            <h1 className="text-danger">S</h1>
+                            <h1 className="text-warning">T</h1>
+                            <h1 className="text-success">O</h1>
+                            <h1 className="text-primary">R</h1>
+                            <h1 className="text-secondary">E</h1>
 
                         </div>
 
@@ -76,20 +83,44 @@ export default function Header() {
                                         Cart
                                     </Link>
 
-                                    <button type="button" className="btn btn-primary" onClick={OnClick}>Logout</button>
                                 </div>
                             ) : (
 
                                 <div className="d-flex align-items-center" id="NoneUser">
-                                    <Link to={'/login'} className="btn btn-primary me-3">
-                                        Login é
-                                    </Link>
-                                    <Link to={'/cart'} className="btn btn-primary me-3">
-                                        Cart
-                                    </Link>
-                                    <button type="button" className="btn btn-primary" onClick={OnClick}>Logout</button>
-                                </div>
+                                    <div class="dropdown">
+                                        <a
+                                            data-mdb-dropdown-init
+                                            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                                            href="#"
+                                            id="navbarDropdownMenuAvatar"
+                                            role="button"
+                                            aria-expanded="false"
+                                        >
+                                            <img
+                                                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                                                class="rounded-circle"
+                                                height="25"
+                                                alt="Black and White Portrait of a Man"
+                                                loading="lazy"
+                                            />
+                                        </a>
+                                        <ul
+                                            class="dropdown-menu dropdown-menu-end"
+                                            aria-labelledby="navbarDropdownMenuAvatar"
+                                        >
+                                            <li>
+                                                <a class="dropdown-item" href="#">My profile</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">Settings</a>
+                                            </li>
+                                            <li>
+                                                <button type="button" className="btn btn-primary" onClick={OnClick}>Logout</button>
 
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             )
                         }
 
@@ -108,7 +139,7 @@ export default function Header() {
                         </div> */}
                     </div>
                 </div>
-            </nav>
+            </nav >
         </>
     )
 }

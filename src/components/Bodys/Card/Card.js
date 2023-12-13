@@ -23,8 +23,9 @@ export default function Card() {
                     <div className="card w-25 p-3 mt-2 mb-2" key={index}>
                         <img
                             src={`http://localhost:3002/${product.ImageDisplay}`}
-                            className="card-img-top"
+                            className="card-img-top "
                             alt="Fissure in Sandstone"
+                            
                         />
                         <div className="card-body">
                             <h5 className="card-title ProductName">{product.productname}</h5>
