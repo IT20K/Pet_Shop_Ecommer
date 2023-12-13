@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AxiosProduct from './AxiosProduct/AxiosProduct';
-
+import image from '../../../logo.svg'
 export default function Card() {
     const [products, setProducts] = useState([]);
 
@@ -22,7 +22,7 @@ export default function Card() {
                 {products.map((product, index) => (
                     <div className="card w-25 p-3 mt-2 mb-2" key={index}>
                         <img
-                            src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp"
+                            src={`http://localhost:3002/${product.ImageDisplay}`}
                             className="card-img-top"
                             alt="Fissure in Sandstone"
                         />

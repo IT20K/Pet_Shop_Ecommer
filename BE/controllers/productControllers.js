@@ -1,6 +1,6 @@
 const ProductModel = require("../models/productModel")
 const { mongooseToObject, mutipleMongooseObject } = require('../util/mongoose')
-
+const path = require('path')
 class ProductControllers {
     // products/
     async Index(req, res, next) {
@@ -20,6 +20,7 @@ class ProductControllers {
     // products/create
     async CreateProduct(req, res) {
         try {
+            const uploadedFiles = req.files;
             const product = await ProductModel.create({
                 productname: req.body.productname,
                 currency: req.body.currency,
@@ -30,12 +31,10 @@ class ProductControllers {
                 sold: req.body.sold,
                 producter: req.body.producter,
                 organised: req.body.organised,
-                imageObject: {
-                    ImageDisplay: req.body.ImageDisplay,
-                    ImageDisplaySub: req.body.ImageDisplaySub,
-                    ImageDisplaySubSub: req.body.ImageDisplaySubSub,
-                    ImageDisplaySubSubSub: req.body.ImageDisplaySubSubSub,
-                },
+                ImageDisplay: uploadedFiles['ImageDisplay'] ? path.join(uploadedFiles['ImageDisplay'][0].filename) : '',
+                ImageDisplaySub: uploadedFiles['ImageDisplaySub'] ? path.join(uploadedFiles['ImageDisplaySub'][0].filename) : '',
+                ImageDisplaySubSub: uploadedFiles['ImageDisplaySubSub'] ? path.join(uploadedFiles['ImageDisplaySubSub'][0].filename) : '',
+                ImageDisplaySubSubSub: uploadedFiles['ImageDisplaySubSubSub'] ? path.join(uploadedFiles['ImageDisplaySubSubSub'][0].filename) : '',
                 comments: req.body.comments,
             })
             res.redirect("/products")
@@ -45,6 +44,7 @@ class ProductControllers {
             return res.status(404).json({ message: err.message })
         }
     }
+
     // products/v1/api/detail
     async DetailAllProduct(req, res) {
         try {
@@ -54,22 +54,30 @@ class ProductControllers {
 
         }
         catch (err) {
-            return res.status(500).json({ messgae: err.message })
+            return res.status(500).json({ message: err.message })
         }
     }
+
+
+
     // products/v1/api/detail/:id
     async DetailProduct(req, res) {
         try {
             const { id } = req.params
             const Product = await ProductModel.findById(id)
+
             res.render('DetailProduct', { product: mongooseToObject(Product) })
             // return res.status(200).json(product)
-
         }
         catch (err) {
             return res.status(500).json({ messgae: err.message })
         }
     }
+
+
+
+
+
     // products/v1/api/delete/:id
     async DeleteForm(req, res) {
         try {
@@ -93,7 +101,7 @@ class ProductControllers {
             }
             catch (err) {
                 return res.status(404).json({ message: err.message })
-    
+
             }
         }
         catch (err) {
@@ -102,7 +110,7 @@ class ProductControllers {
     }
 
     // products/v1/api/update/:id/get
-    async UpdateForm(req,res){
+    async UpdateForm(req, res) {
         try {
             const { id } = req.params
             const Product = await ProductModel.findById(id)
@@ -114,7 +122,7 @@ class ProductControllers {
         }
     }
     // products/v1/api/update/:id
-    async UpdateProduct(req,res){
+    async UpdateProduct(req, res) {
         const { id } = req.params
         await ProductModel.findByIdAndUpdate(id, req.body)
         // return res.status(200).json(product)

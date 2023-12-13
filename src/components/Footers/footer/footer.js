@@ -82,6 +82,7 @@ export default function Footer() {
                                             </div>
                                         </form>
                                     </div>
+
                                 </div>
                             </div>
 

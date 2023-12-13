@@ -28,11 +28,22 @@ export default function Header() {
             <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary" id="navigationbar" >
                 <div className="container">
                     <a className="navbar-brand me-2" href="/">
-                        <img
-                            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-                            height="16"
-                            alt="MDB Logo"
-                        />
+                        <div className="d-flex">
+                                <h1 className="text-primary">A</h1>
+                                <h1 className="text-secondary">N</h1>
+                                <h1 className="text-success">D</h1>
+                                <h1 className="text-warning">R</h1>
+                                <h1 className="text-info">E</h1>
+                                <h1 className="text-secondary">W</h1>
+                                <h1 className="text-muted">-</h1>
+                                <h1 className="text-danger">S</h1>
+                                <h1 className="text-warning">T</h1>
+                                <h1 className="text-success">O</h1>
+                                <h1 className="text-primary">R</h1>
+                                <h1 className="text-secondary">E</h1>
+
+                        </div>
+
                     </a>
                     <button
                         className="navbar-toggler"

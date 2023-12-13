@@ -28,13 +28,12 @@ export default async function AxiosLogin(FormLogin) {
         const UserID = User.data._id
         const CustomerRequest = { id: UserID }
         // lưu trữ data
-        if(!localStorage.getItem('UserID')){
+
+        if (!localStorage.getItem('UserID')) {
             localStorage.setItem('UserID', JSON.stringify(CustomerRequest))
         }
 
-        // const UserIDs = localStorage.getItem('UserID')
-        // const UserJson  = JSON.parse(UserIDs)
-        // console.log(UserJson)
+
     }
     catch (err) {
         console.log({ message: err.message })

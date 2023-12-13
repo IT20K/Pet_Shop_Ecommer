@@ -1,22 +1,5 @@
 const mongoose = require("mongoose");
-const ImageSchema = new mongoose.Schema({
-    ImageDisplay: {
-        type: String,
-        default: ""
-    },
-    ImageDisplaySub: {
-        type: String,
-        default: ""
-    },
-    ImageDisplaySubSub: {
-        type: String,
-        default: ""
-    },
-    ImageDisplaySubSubSub: {
-        type: String,
-        default: ""
-    }
-})
+
 const ProductModel = mongoose.Schema({
     productname: {
         type: String,
@@ -52,7 +35,22 @@ const ProductModel = mongoose.Schema({
     organised: {
         type: String
     },
-    imageObject: ImageSchema,
+    ImageDisplay: {
+        type: String,
+        default: ""
+    },
+    ImageDisplaySub: {
+        type: String,
+        default: ""
+    },
+    ImageDisplaySubSub: {
+        type: String,
+        default: ""
+    },
+    ImageDisplaySubSubSub: {
+        type: String,
+        default: ""
+    },
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comments" }]
 
 });

@@ -6,7 +6,7 @@
         <div class="order-details  w-100">
             <h1>Form Add Product</h1>
             <div class="w-100">
-                <form class="w-100" action="/products/v1/api/create" method="post">
+                <form class="w-100" action="/products/v1/api/create" method="post"  enctype="multipart/form-data">
                     <div class=" d-flex flex-wrap w-100">
                         <div class="form-group w-50 p-2">
                             <span class="field-label">Productname:</span>
@@ -53,12 +53,32 @@
                             <input class="field-value mt-3 mb-3 form-control" name="organised"
                                 placeholder="Please enter your organised" type="text" />
                         </div>
+                        <div class="form-group w-50 p-2">
+                            <span class="field-label">?</span>
+                            <input class="field-value mt-3 mb-3 form-control" name=""
+                                placeholder="Please enter your ?" type="text" />
+                        </div>
                          <div class="form-group w-50 pt-2 pb-2">
                             <span class="field-label">Image</span>
-                            <input class="field-value mt-3 mb-3 form-control" name="ImageDisplay"
+                            <input class="field-value mt-3 mb-3 form-control" name="ImageDisplay" multiple
                                 placeholder="Please enter your ImageDisplay" type="file" />
                         </div>
-                        <div class="form-group w-50 p-2">
+                          <div class="form-group w-50 p-2">
+                            <span class="field-label">Image*</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="ImageDisplaySub" multiple 
+                                placeholder="Please enter your ImageDisplaySub" type="file" />
+                        </div>
+                        <div class="form-group w-50 pt-2 pb-2">
+                            <span class="field-label">Image**</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="ImageDisplaySubSub"  
+                                placeholder="Please enter your ImageDisplaySubSub" type="file" />
+                        </div>
+                          <div class="form-group w-50 p-2">
+                            <span class="field-label">Image***</span>
+                            <input class="field-value mt-3 mb-3 form-control" name="ImageDisplaySubSubSub" 
+                                placeholder="Please enter your ImageDisplaySubSubSub" type="file" />
+                        </div>
+                        <div class="form-group w-50  pt-2 pb-2">
                             <input type="submit" class="btn btn-primary " value="Add" />
                             <a href="/users" class="btn btn-primary">Back</a>
                         </div>

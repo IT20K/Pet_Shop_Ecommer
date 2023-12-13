@@ -12,7 +12,7 @@
                     </div>
                     <div class="d-flex gap-2">
                         <a class="btn btn-lg btn-secondary" asp-action="Create" asp-area="Admin" asp-controller="Users"
-                            href="/users/v1/api/get">Create New Product</a>
+                            href="/products/v1/api/get">Create New Product</a>
                     </div>
                 </div>
             </div>
@@ -69,22 +69,41 @@
                             <div class="form-group w-50 p-2">
                                 <span class="field-label">Organised:</span>
 
-                                <input type="text" class="form-control" id="organised" value="{{product.organised}}" readonly>
+                                <input type="text" class="form-control" id="organised" value="{{product.organised}}"
+                                    readonly>
                             </div>
                             <div class="form-group w-50 pt-2 pb-2">
                                 <span class="field-label">?</span>
 
-                                <input type="text" class="form-control" id="?"
-                                    readonly>
+                                <input type="text" class="form-control" id="?" readonly>
                             </div>
+                            <div class="form-group w-100 pt-2 pb-2 d-flex justify-content-between">
+                                <div class="w-25 m-2" style="height: 100px;">
+                                    <img class="w-100 h-100" src="http://localhost:3002/{{product.ImageDisplay}}" alt="Err">
+                                </div>
+                                 <div class="w-25 m-2" style="height: 100px;">
+                                    <img class="w-100 h-100" src="http://localhost:3002/{{product.ImageDisplaySub}}" alt="Err">
+                                </div>
+                                 <div class="w-25 m-2" style="height: 100px;">
+                                    <img class="w-100 h-100" src="http://localhost:3002/{{product.ImageDisplaySubSub}}" alt="Err">
+                                </div>
+                                 <div class="w-25 m-2" style="height: 100px;">
+                                    <img class="w-100 h-100" src="http://localhost:3002/{{product.ImageDisplaySubSubSub}}" alt="Err">
+                                </div>
+                            </div>
+
+
+
                             <div class="form-group w-50 p-2 d-flex">
-                                 <a class="btn btn-danger text-white mt-2 mb-2" href="/products/v1/api/delete/{{product._id}}">
-                                   Delete
+                                <a class="btn btn-danger text-white mt-2 mb-2"
+                                    href="/products/v1/api/delete/{{product._id}}">
+                                    Delete
                                 </a>
-                                <a class="btn btn-warning text-white m-2" href="/products/v1/api/update/{{product._id}}/get">
+                                <a class="btn btn-warning text-white m-2"
+                                    href="/products/v1/api/update/{{product._id}}/get">
                                     Update
                                 </a>
-                                  <a class="btn btn-primary text-white m-2" href="/products">
+                                <a class="btn btn-primary text-white m-2" href="/products">
                                     Back
                                 </a>
                             </div>

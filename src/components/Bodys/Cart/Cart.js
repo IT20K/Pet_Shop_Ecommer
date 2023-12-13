@@ -32,6 +32,7 @@ export default function Cart() {
             })
         }
         Summary()
+        
     }, [])
     // xoá hết từ cart của users đến carts
     const OnDeleteAll = async () => {
@@ -57,10 +58,10 @@ export default function Cart() {
         parent.querySelector(".inputValue").value = value;
         AxiosUpdateQuantity(value, id)
     }
-    
+
     // giảm số lượng
     const Decrease = async (e) => {
-        
+
         const button = e.target;
         const parent = button.parentElement;
         const id = button.getAttribute("data-id");
@@ -72,8 +73,26 @@ export default function Cart() {
         parent.querySelector(".inputValue").value = value;
         AxiosUpdateQuantity(value, id)
     }
-
-
+    window.onload = ()=>{
+        Paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [
+                        {
+                            amount: {
+                                value: '0.01'
+                            }
+                        }
+                    ]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                });
+            }
+        }).render('#paypal');
+    }
     return (
         <>
             <section className="h-100 h-custom">
@@ -105,7 +124,7 @@ export default function Cart() {
                                                                 <div className="d-flex flex-row align-items-center w-100 justify-content-start">
                                                                     <div className="w-25">
                                                                         <img
-                                                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                                                                            src={`http://localhost:3002/${cart.ImageDisplay}`}
                                                                             className="img-fluid rounded-3" alt="Shopping item" />
                                                                     </div>
                                                                     <div className="ms-3">
@@ -154,7 +173,7 @@ export default function Cart() {
 
                                         </div>
                                         <div className="col-lg-5">
-                                            <div className="card bg-primary text-white rounded-3">
+                                            <div className="card bg-secondary text-white rounded-3">
                                                 <div className="card-body">
                                                     <div className="d-flex justify-content-between align-items-center mb-4">
                                                         <h5 className="mb-0">Card details</h5>
@@ -219,12 +238,22 @@ export default function Cart() {
                                                             <p className="mb-2">$4818.00</p>
                                                         </div> */}
 
-                                                        <button type="button" className="btn btn-info btn-block btn-lg">
+                                                        {/* <button type="button" className="btn btn-info btn-block btn-lg">
                                                             <div className="d-flex justify-content-between">
                                                                 <span>{sum}</span>
                                                                 <Link to={'/payment'}> Checkout <i className="fas fa-long-arrow-alt-right ms-2"></i></Link>
                                                             </div>
-                                                        </button>
+                                                        </button> */}
+                                                        {/* <div className='row  mt-2'>
+                                                            <div className='w-100 d-flex justify-content-center algin-content-center'>
+                                                                <PayPalScriptProvider options={{ 'AY94rKESY3SLKA_aQjLxufEfI47FhGqFrjig4dXWTzNZgLQSRSN-xWCEaUA9scm4nJZ_62FPRNWgIZI-': 'test', currency: 'USD' }}>
+                                                                    <div id="paypal">
+                                                                        <PayPalButtons />
+                                                                    </div>
+                                                                </PayPalScriptProvider>
+                                                            </div>
+                                                        </div> */}
+                                                        <div id='paypal'></div>
                                                     </div>
 
 

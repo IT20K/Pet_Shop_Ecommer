@@ -12,6 +12,9 @@ const PaypalSchema = mongoose.Schema({
     baseurl:{
         type:String
     },
+    total:{
+        type:Number
+    },
     users:{type:mongoose.Schema.Types.ObjectId,ref:"Users"},
     invoices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Invoices" }]
 

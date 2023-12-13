@@ -9,10 +9,16 @@
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=<AY94rKESY3SLKA_aQjLxufEfI47FhGqFrjig4dXWTzNZgLQSRSN-xWCEaUA9scm4nJZ_62FPRNWgIZI->&merchant-id=<MERCHANT_ID>&currency=USD"></script>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AY94rKESY3SLKA_aQjLxufEfI47FhGqFrjig4dXWTzNZgLQSRSN-xWCEaUA9scm4nJZ_62FPRNWgIZI-"></script>
   <title>React App</title>
 </head>
 
@@ -21,9 +27,10 @@
   <div id="root"></div>
   <!--  payment  -->
   <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
-  
+  <script
+    type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+
   <!-- Set up a container element for the button -->
-  <!-- <script type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script> -->
   <!-- live chat -->
   <script>
     try {
@@ -33,8 +40,7 @@
     }
   </script>
 
-  <script
-    src="https://www.paypal.com/sdk/js?client-id=AY94rKESY3SLKA_aQjLxufEfI47FhGqFrjig4dXWTzNZgLQSRSN-xWCEaUA9scm4nJZ_62FPRNWgIZI-&components=buttons"></script>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@ import AddToCart from './AddToCart/AddToCart';
 export default function Detail() {
     const [products, setProducts] = useState({});
     const [quantity, setQuantity] = useState(1);
-    
+
     useEffect(() => {
         async function fetchData() {
             const product = await DetailAxios()
@@ -19,33 +19,34 @@ export default function Detail() {
         const product_price = document.querySelector('.product_price').textContent
         const price = Number(product_price)
         //thêm vào hàm xử lý
-        AddToCart(productId,quantity, price)
+        AddToCart(productId, quantity, price)
     }
     const handleQuantityChange = (event) => {
         setQuantity(event.target.value);
-      };
+    };
     return (
         <>
             <div className="row m-2">
                 <div className="col-lg-2 order-lg-1 order-2">
                     <ul className="image_list list-unstyled">
+                        
                         <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713229/single_4.jpg" >
-                            <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713229/single_4.jpg" alt="" className="w-100" /></li>
+                            <img src={`http://localhost:3002/${products.ImageDisplaySub}`} alt="" className="w-100 h-100" /></li>
                         <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_2.jpg">
-                            <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_2.jpg" alt="" className="w-100" /></li>
+                            <img src={`http://localhost:3002/${products.ImageDisplaySubSub}`} alt="" className="w-100 h-100" /></li>
                         <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_3.jpg">
-                            <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_3.jpg" alt="" className="w-100" /></li>
+                            <img src={`http://localhost:3002/${products.ImageDisplaySubSubSub}`} alt="" className="w-100 h-100" /></li>
                     </ul>
                 </div>
                 <div className="col-lg-4 order-lg-2 order-1">
-                    <div className="image_selected"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713229/single_4.jpg" alt="" /></div>
+                    <div className="image_selected"><img className='w-100 h-100' src={`http://localhost:3002/${products.ImageDisplay}`} alt="" /></div>
                 </div>
                 <div className="col-lg-6 order-3">
                     <div className="product_description">
                         <nav>
                             <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                <li className="breadcrumb-item"><a href="#">Products</a></li>
+                                <li className="breadcrumb-item"><a href="/">Home</a></li>
+                                <li className="breadcrumb-item"><a href="/products">Products</a></li>
                                 <li className="breadcrumb-item active">Accessories</li>
                             </ol>
                         </nav>
@@ -76,7 +77,7 @@ export default function Detail() {
                         <div className="order_info d-flex flex-row">
                             <form action="#">
                             </form>
-                            </div>
+                        </div>
                         <div className="row">
                             <div className="col-xs-6 mt-2 mb-2" >
                                 <div className="product_quantity"> <span>QTY: </span>

@@ -5,6 +5,9 @@ import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 
 function PaymentPages() {
     useEffect(() => {
+
+
+      
         // Your createOrder logic here
     }, []);
 
