@@ -124,7 +124,8 @@ class ProductControllers {
     // products/v1/api/update/:id
     async UpdateProduct(req, res) {
         const { id } = req.params
-        await ProductModel.findByIdAndUpdate(id, req.body)
+        // const uploadedFiles = req.files;
+        await ProductModel.findByIdAndUpdate(id,req.body)
         // return res.status(200).json(product)
         res.redirect('/products')
 
@@ -136,7 +137,6 @@ class ProductControllers {
             const Product = await ProductModel.findById(id)
             res.send(Product)
             // return res.status(200).json(product)
-
         }
         catch (err) {
             return res.status(500).json({ messgae: err.message })

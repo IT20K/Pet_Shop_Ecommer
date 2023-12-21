@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import AxiosLogin from './Check/AxiosLogin'
+import { Toaster } from "react-hot-toast";
+
 export default function FormLogin() {
 
 
@@ -10,6 +12,8 @@ export default function FormLogin() {
     }
     return (
         <div className='p-5 m-5'>
+            <Toaster position="top-right" reverseOrder={false}></Toaster>
+
             <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
                 <li className="nav-item" role="presentation">
                     <Link className="nav-link active" id="tab-login" data-mdb-toggle="pill" to={'/login'} role="tab"
@@ -58,7 +62,7 @@ export default function FormLogin() {
                         <div className="row mb-4">
                             <div className="col-md-6 d-flex justify-content-center">
                                 <div className="form-check mb-3 mb-md-0">
-                                    <input className="form-check-input" type="checkbox" value="" id="loginCheck" defaultChecked/>
+                                    <input className="form-check-input" type="checkbox" value="" id="loginCheck" defaultChecked />
                                     <label className="form-check-label" htmlFor="loginCheck"> Remember me </label>
                                 </div>
                             </div>

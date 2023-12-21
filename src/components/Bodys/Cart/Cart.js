@@ -5,95 +5,131 @@ import AxiosIDCart from './AxiosIDCart/AxiosIDCart'
 import AxiosOnDeleteAll from './AxiosOnDeleteAll/AxiosOnDeleteAll'
 import AxiosUpdateQuantity from './AxiosUpdateQuantity/AxiosUpdateQuantity'
 import { Link } from 'react-router-dom'
-import { PayPalScriptProvider , PayPalButtons} from '@paypal/react-paypal-js'
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
+import CreateInvoices from './CreateInvoices/CreateInvoices'
 export default function Cart() {
+
     // cart sản phẩm
     const [carts, setCart] = useState([])
     // cart id của cart
     const [cartID, setCartID] = useState([])
     // tổng thành tiền
-    const [sum, setSum] = useState("$")
+    const [sum, setSum] = useState(0)
     // xử lý số lượng 
-    const [quantity, setQuantity] = useState('');
+    const [_quantity, setQuantity] = useState('');
+    // xử lst thang toán
+    const [_isPaid, _setIsPaid] = useState(false);
+
 
     useEffect(() => {
         const fetchData = async () => {
-            const cart = await AxiosCart()
-            setCart(cart)
-            const cartID = await AxiosIDCart()
-            setCartID(cartID)
-        }
-        fetchData()
-        const Summary = async () => {
-            let Total = 0
-            await carts.forEach((cart, index) => {
-                const sum = cartID[index]?.quantity * cartID[index]?.price
-                Total += sum
-                return setSum(Total)
-            })
-        }
-        Summary()
-        
-    }, [])
+            try {
+                const cart = await AxiosCart();
+                setCart(cart);
+                const cartID = await AxiosIDCart();
+                setCartID(cartID);
+
+                let Total = 0;
+
+                carts.forEach((cart, index) => {
+                    const cartSum = cartID[index]?.quantity * cartID[index]?.price;
+                    Total += cartSum;
+                });
+                setSum(Total);
+            }
+            catch (err) {
+                console.log({ message: err.message })
+            }
+        };
+
+        fetchData();
+
+    }, [carts, cartID]);
+
     // xoá hết từ cart của users đến carts
     const OnDeleteAll = async () => {
-        await AxiosOnDeleteAll()
+        try {
+            await AxiosOnDeleteAll()
+        }
+        catch (err) {
+            console.log({ message: err.message })
+        }
     }
-
     // thay đổi số lượng
     const handleQuantityChange = (event) => {
         setQuantity(event.target.value);
     };
-
     // tăng số lượng 
     const Increase = async (e) => {
-        const button = e.target;
-        const parent = button.parentElement;
-        const id = button.getAttribute("data-id");
-        var value = parseInt(parent.querySelector(".inputValue").value, 10);
-        // parseInt chuyển đổi chuỗi thành số nguyên
-        // syntax parseIndex(string, radix)
-        // radix mặc định là 10 ( cơ số chuyển đổi ) --> khong bao gồm ký tự
-        value = isNaN(value) ? 0 : value;
-        value++;
-        parent.querySelector(".inputValue").value = value;
-        AxiosUpdateQuantity(value, id)
+        try {
+            const button = e.target;
+            const parent = button.parentElement;
+            const id = button.getAttribute("data-id");
+            var value = parseInt(parent.querySelector(".inputValue").value, 10);
+            // parseInt chuyển đổi chuỗi thành số nguyên
+            // syntax parseIndex(string, radix)
+            // radix mặc định là 10 ( cơ số chuyển đổi ) --> khong bao gồm ký tự
+            value = isNaN(value) ? 0 : value;
+            value++;
+            parent.querySelector(".inputValue").value = value;
+            AxiosUpdateQuantity(value, id)
+        }
+        catch (err) {
+            console.log({ message: err.message })
+        }
     }
-
     // giảm số lượng
     const Decrease = async (e) => {
-
-        const button = e.target;
-        const parent = button.parentElement;
-        const id = button.getAttribute("data-id");
-        var value = parseInt(parent.querySelector(".inputValue").value, 10);
-        value = isNaN(value) ? 0 : value;
-        if (value > 1) {
-            value--;
+        try {
+            const button = e.target;
+            const parent = button.parentElement;
+            const id = button.getAttribute("data-id");
+            var value = parseInt(parent.querySelector(".inputValue").value, 10);
+            value = isNaN(value) ? 0 : value;
+            if (value > 1) {
+                value--;
+            }
+            parent.querySelector(".inputValue").value = value;
+            AxiosUpdateQuantity(value, id)
         }
-        parent.querySelector(".inputValue").value = value;
-        AxiosUpdateQuantity(value, id)
+        catch (err) {
+            console.log({ message: err.message })
+        }
     }
-    // window.onload = ()=>{
-    //     Paypal.Buttons({
-    //         createOrder: function (data, actions) {
-    //             return actions.order.create({
-    //                 purchase_units: [
-    //                     {
-    //                         amount: {
-    //                             value: '0.01'
-    //                         }
-    //                     }
-    //                 ]
-    //             });
-    //         },
-    //         onApprove: function (data, actions) {
-    //             return actions.order.capture().then(function (details) {
-    //                 alert('Transaction completed by ' + details.payer.name.given_name);
-    //             });
-    //         }
-    //     }).render('#paypal');
-    // }
+    const CreateOrder = async (data, actions) => {
+        try {
+            const Total = document.getElementById('Total')
+            const totalvalue = await Total.textContent
+            CreateInvoices(totalvalue)
+            return actions.order.create({
+                purchase_units: [
+                    {
+                        amount: {
+                            value: totalvalue.toString(),
+                        }
+                    },
+                ],
+            });
+        } catch (err) {
+            console.log("An error occurred during order creation:", err);
+        }
+    };
+    // thanh toán thành công
+    const onApprove = (data, actions) => {
+        try {
+            return actions.order.capture().then(function (details) {
+                console.log("Payment successful. Transaction ID: " + details.id);
+            });
+        }
+        catch (err) {
+            console.log({ message: err.message })
+        }
+    };
+    // huỷ payment
+    const onCancel = (data) => {
+        console.log("Payment cancelled.");
+    };
+    
     return (
         <>
             <section className="h-100 h-custom">
@@ -109,6 +145,7 @@ export default function Cart() {
                                             <hr />
                                             <div className="d-flex justify-content-between align-items-center mb-4">
                                                 <div>
+
                                                     <p className="mb-1">Shopping cart</p>
                                                     <p className="mb-0">You have 4 items in your cart</p>
                                                 </div>
@@ -142,7 +179,7 @@ export default function Cart() {
                                                                         >
                                                                             +
                                                                         </button>
-                                                                        <input type='text' value={cartID[index]?.quantity || 1} name='quantity' id='QuantityInput' className='inputValue'
+                                                                        <input type='text' value={cartID[index]?.quantity || 1} name='quantity'  className='inputValue'
                                                                             onChange={(e) => handleQuantityChange(e)} />
                                                                         <button
                                                                             className='btn btn-primary'
@@ -156,7 +193,7 @@ export default function Cart() {
                                                                         <h5 className="mb-0 m-2">{cart.currency}</h5>
                                                                     </div>
                                                                 </div>
-                                                                <form action='/' method='post' id='DeleteOutCart' onSubmit={(e) => {
+                                                                <form action='/' method='post' onSubmit={(e) => {
                                                                     e.preventDefault()
                                                                 }} >
                                                                     <button className='btn btn-danger' type="submit" onClick={() => DeleteAxios(cartID[index]._id)}><i className="fas fa-trash-alt"></i></button>
@@ -223,12 +260,6 @@ export default function Cart() {
                                                     </form>
 
                                                     <div className="my-4">
-
-                                                        <div className="d-flex justify-content-between">
-                                                            <p className="mb-2">Subtotal</p>
-                                                            <p className="mb-2">{sum}</p>
-                                                        </div>
-
                                                         {/* <div className="d-flex justify-content-between">
                                                             <p className="mb-2">Shipping</p>
                                                             <p className="mb-2">$20.00</p>
@@ -245,11 +276,26 @@ export default function Cart() {
                                                                 <Link to={'/payment'}> Checkout <i className="fas fa-long-arrow-alt-right ms-2"></i></Link>
                                                             </div>
                                                         </button> */}
+                                                        <div className="d-flex justify-content-between">
+                                                            <p className="mb-2">Subtotal</p>
+                                                            <p className="mb-2" id='Total'>{sum}</p>
+                                                        </div>
+
+
                                                         <div className='row  mt-2'>
                                                             <div className='w-100 d-flex justify-content-center algin-content-center'>
-                                                                <PayPalScriptProvider options={{ 'AY94rKESY3SLKA_aQjLxufEfI47FhGqFrjig4dXWTzNZgLQSRSN-xWCEaUA9scm4nJZ_62FPRNWgIZI-': 'test', currency: 'USD' }}>
-                                                                    <div id="paypal">
-                                                                        <PayPalButtons />
+                                                                <PayPalScriptProvider options={{ "client-id": "AY94rKESY3SLKA_aQjLxufEfI47FhGqFrjig4dXWTzNZgLQSRSN-xWCEaUA9scm4nJZ_62FPRNWgIZI-" }}>
+                                                                    <div>
+                                                                        {_isPaid ? (
+                                                                            <p>Thanh toán thành công!</p>
+                                                                        ) : (
+                                                                            <PayPalButtons
+                                                                                id="buttonpayment"
+
+                                                                                createOrder={(data, actions) => CreateOrder(data, actions, sum)}
+                                                                                onApprove={onApprove}
+                                                                                onCancel={onCancel} />
+                                                                        )}
                                                                     </div>
                                                                 </PayPalScriptProvider>
                                                             </div>

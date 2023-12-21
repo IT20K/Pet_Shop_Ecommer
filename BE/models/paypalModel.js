@@ -1,8 +1,5 @@
 const mongoose = require('mongoose')
 const PaypalSchema = mongoose.Schema({
-    mode :{
-        type:String
-    },
     clientid:{
         type:String
     },
@@ -17,7 +14,6 @@ const PaypalSchema = mongoose.Schema({
     },
     users:{type:mongoose.Schema.Types.ObjectId,ref:"Users"},
     invoices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Invoices" }]
-
 })
 const Paypal = mongoose.model('Payments', PaypalSchema)
 module.exports = Paypal

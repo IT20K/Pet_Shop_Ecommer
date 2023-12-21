@@ -1,0 +1,55 @@
+#ContainShowItem {
+    #ShowItem {
+        #showItemLeft {
+            height: 350px;
+            position: relative;
+
+            .textShow {
+                position: absolute;
+                top: 0;
+
+            }
+        }
+
+        #showItemRight {
+            >div {
+                #ShowItemMiddle {
+                    height: 350px;
+                    position: relative;
+
+                    .TextShow {
+                        position: absolute;
+                        top: 0;
+
+                    }
+                }
+
+                #ShowItemLast {
+                    height: 350px;
+
+                    >div {
+                        #ShowItemFirstRight {
+                            position: relative;
+
+                            .TextShow {
+                                top: 0;
+                                left: 0;
+                                position: absolute;
+                            }
+                        }
+
+                        #ShowItemSecondRight {
+                            position: relative;
+                            .TextShow {
+                                top: 0;
+                                left: 0;
+                                position: absolute;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

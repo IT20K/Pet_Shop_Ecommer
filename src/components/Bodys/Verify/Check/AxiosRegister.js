@@ -1,4 +1,6 @@
 import Axios from 'axios'
+import { toast } from "react-hot-toast";
+
 export default async function AxiosRegister(FormRegister) {
     try {
         const registerUsername = FormRegister.querySelector('#registerUsername').value

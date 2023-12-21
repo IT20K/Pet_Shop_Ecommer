@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import AxiosRegister from './Check/AxiosRegister'
+import { Toaster } from "react-hot-toast";
+
 export default function FormRegister() {
     // gọi hàm xử lý đăng kí user
     const onSubmit = (e) => {
@@ -9,6 +11,7 @@ export default function FormRegister() {
     }
     return (
         <div className='p-5 m-5'>
+            <Toaster position="top-right" reverseOrder={false}></Toaster>
 
             <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
                 <li className="nav-item" role="presentation">
@@ -66,7 +69,7 @@ export default function FormRegister() {
                             <label className="form-label" htmlFor="registerRepeatPassword">Repeat password</label>
                         </div>
 
-                        <div className="form-check d-flex justify-content-center mb-4">
+                        <div className="form-check d-flex  mb-4">
                             <input className="form-check-input me-2" type="checkbox" value="" id="registerCheck" defaultChecked
                                 aria-describedby="registerCheckHelpText" />
                             <label className="form-check-label" htmlFor="registerCheck">
@@ -74,7 +77,7 @@ export default function FormRegister() {
                             </label>
                         </div>
 
-                        <button type="submit" className="btn btn-primary btn-block mb-3">Sign in</button>
+                        <button type="submit" className="btn btn-primary btn-block mb-3">Register</button>
                     </form>
                 </div>
 

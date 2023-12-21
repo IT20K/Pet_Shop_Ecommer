@@ -17,6 +17,7 @@ export default function Detail() {
     const handleClick = async (productId) => {
         // lấy số lượng sản phẩm
         const product_price = document.querySelector('.product_price').textContent
+        console.log(product_price)
         const price = Number(product_price)
         //thêm vào hàm xử lý
         AddToCart(productId, quantity, price)
@@ -29,7 +30,7 @@ export default function Detail() {
             <div className="row m-2">
                 <div className="col-lg-2 order-lg-1 order-2">
                     <ul className="image_list list-unstyled">
-                        
+
                         <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713229/single_4.jpg" >
                             <img src={`http://localhost:3002/${products.ImageDisplaySub}`} alt="" className="w-100 h-100" /></li>
                         <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_2.jpg">
@@ -52,9 +53,19 @@ export default function Detail() {
                         </nav>
                         <div className="product_name">{products.productname}</div>
                         <div className="product-rating"><span className="badge badge-success"><i className="fa fa-star"></i> 4.5 Star</span> <span className="rating-review">35 Ratings &amp; 45 Reviews</span></div>
-                        <div> <span className="product_price" name="price">{products.currency}</span> <strike className="product_discount"> <span >₹ 2,000<span> </span></span></strike> </div>
-                        <div> <span className="product_saved">You Saved:</span> <span >₹ 2,000<span> </span></span></div>
-                        <div> <span className="product_info">EMI starts at ₹ 2,000. No Cost EMI Available<span><br /> <span className="product_info">Warranty: 6 months warranty<span><br /> <span className="product_info">7 Days easy return policy<span><br /> <span className="product_info">7 Days easy return policy<span><br /> <span className="product_info">In Stock: 25 units sold this week<span> </span></span></span></span></span></span></span></span></span></span></div>
+                        <div> <span className="product_price" name="price">{products.currency}</span> VND <strike className="product_discount">
+                            {/* <span >₹ 2,000<span> </span></span> */}
+                        </strike> </div>
+                        {/* <div> 
+                            <span className="product_saved">You Saved:</span> <span >₹ 2,000<span> </span></span>
+                        </div> */}
+                        <div>
+                            {/* <span className="product_info">EMI starts at ₹ 2,000. No Cost EMI Available<span><br />
+                                <span className="product_info">Warranty: 6 months warranty<span><br />
+                                    <span className="product_info">7 Days easy return policy<span><br />
+                                        <span className="product_info">7 Days easy return policy<span><br />
+                                            <span className="product_info">In Stock: 25 units sold this week<span> </span></span></span></span></span></span></span></span></span></span> */}
+                        </div>
                         <div>
                             <div className="row">
                                 <div className="col-md-5">

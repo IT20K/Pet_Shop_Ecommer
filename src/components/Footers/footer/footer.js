@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 export default function Footer() {
 
     const onchange = async (e) => {
@@ -47,7 +48,7 @@ export default function Footer() {
                                             id="mc-embedded-subscribe-form"
                                             name="mc-embedded-subscribe-form"
                                             className="validate"
-                                            target="_blank"
+                                           
                                         >
                                             <div id="mc_embed_signup_scroll">
                                                 <h2>Subscribe</h2>
@@ -89,47 +90,50 @@ export default function Footer() {
 
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    Products
+                                    Programming Languages was used
                                 </h6>
-                                <p>
-                                    <a className="text-reset">Angular</a>
-                                </p>
                                 <p>
                                     <a className="text-reset">React</a>
                                 </p>
                                 <p>
-                                    <a className="text-reset">Vue</a>
+                                    <a className="text-reset">NodeJS + Mongo</a>
                                 </p>
                                 <p>
-                                    <a className="text-reset">Laravel</a>
+                                    <a className="text-reset">SCSS + CSS</a>
+                                </p>
+                                <p>
+                                    <a className="text-reset">JavaScript</a>
                                 </p>
                             </div>
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    Useful links
+                                    Development By
                                 </h6>
                                 <p>
-                                    <a className="text-reset">Pricing</a>
+                                    <Link to={'https://github.com/Huy3004'} target='_blank'  className="text-reset">Đặng Đình Huy</Link>
                                 </p>
                                 <p>
-                                    <a className="text-reset">Settings</a>
+                                    <Link to={'https://github.com/thag15'} target='_blank'  className="text-reset">Hồ Quốc Thắng</Link>
                                 </p>
                                 <p>
-                                    <a className="text-reset">Orders</a>
+                                    <Link to={'https://github.com/truongthinh776'} target='_blank'  className="text-reset">Vương Trường Thịnh</Link>
                                 </p>
                                 <p>
-                                    <a className="text-reset">Help</a>
+                                    <Link to={'https://github.com/HuynhPhuocTri'} target='_blank'  className="text-reset">Huỳnh Phước Trí</Link>
+                                </p>
+                                <p>
+                                    <Link to={'https://github.com/AndrewZKn'} target='_blank' className="text-reset">Nguyễn Triệu Vỹ</Link>
                                 </p>
                             </div>
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                                <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                                <p><i className="fas fa-home me-3"></i> Vietnam, TP Ho Chi Minh</p>
                                 <p>
                                     <i className="fas fa-envelope me-3"></i>
-                                    info@example.com
+                                    trieuvyxka1@gmail.com
                                 </p>
-                                <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                                <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
+                                <p><i className="fas fa-print me-3"></i> 0837441290</p>
+                                {/* <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p> */}
                             </div>
                         </div>
                     </div>
@@ -137,7 +141,7 @@ export default function Footer() {
 
                 <div className="text-center p-4" >
                     © 2021 Copyright:
-                    <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                    <a className="text-reset fw-bold" href="#">HTTTV-TEAM</a>
                 </div>
             </footer>
         </>

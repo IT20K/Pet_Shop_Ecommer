@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import { toast } from "react-hot-toast";
 export default async function AxiosLogin(FormLogin) {
     try {
         // gửi yêu cầu xác minh và nhận dữ liệu
@@ -18,11 +19,9 @@ export default async function AxiosLogin(FormLogin) {
 
         //kiểm tra trạng thái
         if (User.status === 200) {
-            console.log("Dữ liệu đã đúng")
+            window.location = '/'
         }
-        else {
-            console.log("Dữ liệu sai")
-        }
+        toast.error = 'incorrect'
 
         // chuẩn bị data để hiển thị
         const UserID = User.data._id
