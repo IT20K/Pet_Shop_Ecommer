@@ -5,7 +5,7 @@ import { Dropdown } from 'react-bootstrap';
 export default function Header() {
     const [user, setUser] = useState({})
     const [ID, getID] = useState('')
-  
+// localStorage.removeItem("UserID")
     useEffect(() => {
         const Onload = async () => {
             try {
@@ -36,19 +36,14 @@ export default function Header() {
                 <div className="d-flex justify-content-between w-100 ">
                     <a className="navbar-brand me-2" href="/">
                         <div className="d-flex">
+                            <h3 className="text-primary">P</h3>
+                            <h3 className="text-primary">E</h3>
+                            <h3 className="text-primary">T</h3>
+                            <h3 className="text-primary">-</h3>
+                            <h3 className="text-primary">S</h3>
                             <h3 className="text-primary">H</h3>
-                            <h3 className="text-secondary">T</h3>
-                            <h3 className="text-success">T</h3>
-                            <h3 className="text-warning">T</h3>
-                            <h3 className="text-info">V</h3>
-                            {/* <h3 className="text-secondary">W</h3> */}
-                            <h3 className="text-muted">-</h3>
-                            <h3 className="text-danger">S</h3>
-                            <h3 className="text-warning">T</h3>
-                            {/* <h3 className="text-success">O</h3>
-                            <h3 className="text-primary">R</h3>
-                            <h3 className="text-secondary">E</h3> */}
-
+                            <h3 className="text-primary">O</h3>
+                            <h3 className="text-primary">P</h3>
                         </div>
 
                     </a>

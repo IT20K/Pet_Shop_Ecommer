@@ -167,7 +167,7 @@ export default function Cart() {
                                                                     </div>
                                                                     <div className="ms-3">
                                                                         <h5>{cart.productname}</h5>
-                                                                        <p className="small mb-0">256GB, Navy Blue</p>
+                                                                        <p className="small mb-0"> MÀU LÔNG</p>
                                                                     </div>
                                                                 </div>
                                                                 <div className="d-flex flex-row align-items-center w-100 justify-content-end">
@@ -215,7 +215,7 @@ export default function Cart() {
                                                 <div className="card-body">
                                                     <div className="d-flex justify-content-between align-items-center mb-4">
                                                         <h5 className="mb-0">Card details</h5>
-                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+                                                        <img src="https://ik.imagekit.io/4chk4f1pbm/%E1%BA%A3nh%20file%20petshop/aa_nbWLjp_ZB?updatedAt=1704242664334"
                                                             className="img-fluid rounded-3" alt="Avatar" />
                                                     </div>
                                                     <p className="small mb-2">Card type</p>

@@ -18,6 +18,8 @@
     "express-handlebars": "^7.1.2",
     "mongoose": "^7.6.2",
     "multer": "^1.4.5-lts.1",
+    "node": "^21.2.0",
+    "nodemon": "^3.0.2",
     "paypal-checkout": "^4.0.338",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",

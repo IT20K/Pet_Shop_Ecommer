@@ -52,7 +52,7 @@ export default function Detail() {
                             </ol>
                         </nav>
                         <div className="product_name">{products.productname}</div>
-                        <div className="product-rating"><span className="badge badge-success"><i className="fa fa-star"></i> 4.5 Star</span> <span className="rating-review">35 Ratings &amp; 45 Reviews</span></div>
+                        <div className="product-rating"><span className="badge badge-success"><i className="fa fa-star"></i> GIỐNG </span> <span className="rating-review">Đực / Cái</span></div>
                         <div> <span className="product_price" name="price">{products.currency}</span> VND <strike className="product_discount">
                             {/* <span >₹ 2,000<span> </span></span> */}
                         </strike> </div>
@@ -73,7 +73,7 @@ export default function Detail() {
                                         <div className="row">
                                             <div className="col-md-3 col-xs-3"> <img src="https://img.icons8.com/color/48/000000/price-tag.png" /> </div>
                                             <div className="col-md-9 col-xs-9">
-                                                <div className="pr-info"> <span className="break-all">Get 5% instant discount + 10X rewards @ RENTOPC</span> </div>
+                                                <div className="pr-info"> <span className="break-all">THÁNG</span> </div>
                                             </div>
                                         </div>
                                     </div>
@@ -81,8 +81,8 @@ export default function Detail() {
                                 <div className="col-md-7"> </div>
                             </div>
                             <div className="row">
-                                <div className="col-xs-6" > <span className="product_options">RAM Options</span><br /> <button className="btn btn-primary btn-sm">4 GB</button> <button className="btn btn-primary btn-sm">8 GB</button> <button className="btn btn-primary btn-sm">16 GB</button> </div>
-                                <div className="col-xs-6" > <span className="product_options">Storage Options</span><br /> <button className="btn btn-primary btn-sm">500 GB</button> <button className="btn btn-primary btn-sm">1 TB</button> </div>
+                                <div className="col-xs-6" > <span className="product_options">TUỔI</span><br /> <button className="btn btn-primary btn-sm"></button> <button className="btn btn-primary btn-sm"></button> <button className="btn btn-primary btn-sm"></button> </div>
+                                {/* <div className="col-xs-6" > <span className="product_options">Storage Options</span><br /> <button className="btn btn-primary btn-sm">500 GB</button> <button className="btn btn-primary btn-sm">1 TB</button> </div> */}
                             </div>
                         </div>
                         <div className="order_info d-flex flex-row">

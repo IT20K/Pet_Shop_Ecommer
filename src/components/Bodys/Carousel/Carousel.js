@@ -13,7 +13,7 @@ export default function Carousel() {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item">
-                        <img className='bd-placeholder-img w-100 h-100 object-fit-fill' src='https://ik.imagekit.io/fyhbxzra7/d9bb4238a8c32dc39061083f886be60f.jpg?updatedAt=1702885755956'></img>
+                        <img className='bd-placeholder-img w-100 h-100 object-fit-fill' src='https://ik.imagekit.io/4chk4f1pbm/%E1%BA%A3nh%20file%20petshop/z4586023036753_0c6282324a5b9d17e203425e9170014d.jpg?updatedAt=1691490299757'></img>
 
                         <div class="container">
                             <div class="carousel-caption text-start">
@@ -24,18 +24,18 @@ export default function Carousel() {
                         </div>
                     </div>
                     <div class="carousel-item active">
-                        <img className='bd-placeholder-img w-100 h-100 object-fit-fill' src='https://ik.imagekit.io/fyhbxzra7/cba0c0785970306bfe3768dc8bf34c43.jpg?updatedAt=1702885756115'></img>
+                        <img className='bd-placeholder-img w-100 h-100 object-fit-fill' src='https://ik.imagekit.io/4chk4f1pbm/%E1%BA%A3nh%20file%20petshop/download%20(2).jpg?updatedAt=1704096761105'></img>
 
                         <div class="container">
                             <div class="carousel-caption">
-                                <h1>Another example headline.</h1>
-                                <p>Some representative placeholder content for the second slide of the carousel.</p>
+                                <h1>ALBUM ẢNH</h1>
+                                {/* <p>ẢNH</p> */}
                                 <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img className='bd-placeholder-img w-100 h-100 object-fit-fill' src='https://ik.imagekit.io/fyhbxzra7/04cd15c96a2357acbdb5bb36ecd41856.jpg?updatedAt=1702885756007'></img>
+                        <img className='bd-placeholder-img w-100 h-100 object-fit-fill' src='https://ik.imagekit.io/4chk4f1pbm/%E1%BA%A3nh%20file%20petshop/download%20(2).jpg?updatedAt=1704096761105'></img>
                         <div class="container">
                             <div class="carousel-caption text-end">
                                 <h1>One more for good measure.</h1>
